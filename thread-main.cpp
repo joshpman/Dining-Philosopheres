@@ -15,8 +15,9 @@ int main(int argc, char **argv)
     philosopher *members[5];
     for (int i = 0; i < 5; i++)
     {
+        int myCount = i;
         Chopsticks[i] = new Mutex();
-        members[i] = new philosopher(eatCount, i, i<3?0:1);
+        members[i] = new philosopher(eatCount, myCount, i!=4?0:1);
     }
     for (int i = 0; i < 5; i++)
     {
